@@ -1,0 +1,27 @@
+{
+  "model_path": "/content/runs/detect/danger_detection/yolov8s/weights/best.pt",
+  "model_size": "yolov8s",
+  "imgsz": 640,
+  "conf": 0.4,
+  "device": "cuda",
+  "danger_tiers": {
+    "0": [],
+    "1": [
+      "risky"
+    ],
+    "2": [
+      "dangerous"
+    ]
+  },
+  "class_names": [
+    "billete",
+    "bluntweapon",
+    "glass",
+    "gun",
+    "knife",
+    "monedero",
+    "pistol",
+    "smartphone",
+    "tarjeta"
+  ]
+}

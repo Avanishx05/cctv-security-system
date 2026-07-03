@@ -1,0 +1,20 @@
+# Offline AI Security Application — Requirements
+# Install with: /usr/local/bin/python3.13 -m pip install -r requirements.txt
+
+# ── Computer Vision ───────────────────────────────────────────────────────────
+ultralytics          # YOLOv8 weapon detection
+opencv-python        # webcam capture, frame processing, overlays
+deepface             # FaceNet face recognition + MTCNN detection
+tf-keras             # required by deepface for TensorFlow compatibility
+
+# ── LLM / RAG ────────────────────────────────────────────────────────────────
+ollama               # local LLM client (Llama 3.2 3B via Ollama server)
+chromadb             # vector database for RAG event storage
+
+# ── UI ───────────────────────────────────────────────────────────────────────
+PyQt5                # desktop UI framework
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+numpy                # array operations
+Pillow               # image loading (PIL) used in notebooks
+matplotlib           # visualisation in notebooks

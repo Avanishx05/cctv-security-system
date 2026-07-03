@@ -1,0 +1,9 @@
+{
+  "model_name": "Facenet512",
+  "detector_backend": "mtcnn",
+  "similarity_threshold": 0.68,
+  "alert_on_unknown": true,
+  "known_faces_dir": "known_faces",
+  "unknown_logs_dir": "unknown_logs",
+  "embeddings_cache": "embeddings/known_embeddings.json"
+}

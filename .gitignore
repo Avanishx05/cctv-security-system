@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Generated data
+chroma_db/
+embeddings/
+logs/
+unknown_logs/
+
+# Models (usually too large / regenerable)
+models/
+
+# Sensitive - face data
+known_faces/
+
+# Env/secrets
+.env
+
+# OS junk
+.DS_Store
