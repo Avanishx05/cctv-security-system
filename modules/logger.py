@@ -331,17 +331,21 @@ class SecurityLogger:
 
         # Describe faces
         if facenet_output["faces"]:
-            known_names   = [
-                f["name"] for f in facenet_output["faces"] if f["is_known"]
-            ]
+            known_names   = [f["name"] for f in facenet_output["faces"] if f["is_known"]]
             unknown_count = facenet_output["unknown_count"]
 
             if known_names:
-                parts.append(f"Known people: {', '.join(known_names)}.")
+                parts.append(
+                    f"RECOGNIZED PEOPLE (confirmed by face recognition): "
+                    f"{', '.join(known_names)}."
+                )
             if unknown_count > 0:
-                parts.append(f"{unknown_count} unknown face(s) detected.")
+                parts.append(
+                    f"{unknown_count} UNRECOGNIZED face(s) detected "
+                    f"(not matched to any registered person)."
+                )
         else:
-            parts.append("No faces detected.")
+            parts.append("No faces detected in this frame.")
 
         return " ".join(parts)
 

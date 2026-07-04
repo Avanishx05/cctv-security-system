@@ -438,6 +438,25 @@ class FaceRecognizer:
         self._build_embeddings()
         self._db = self._load_embeddings()
         print(f"[FaceRecognizer] Embeddings rebuilt: {len(self._db)} people.")
+    
+    def clear_unknown_data(self, clear_logs: bool = True, clear_cache: bool = True):
+        """
+        Clears unknown face logs and/or dedup cache.
+        Called on app shutdown or manually via the Faces tab.
+
+        Args:
+            clear_logs:  if True, deletes all files in unknown_logs/
+            clear_cache: if True, clears the dedup cache pkl
+        """
+        if clear_logs:
+            log_files = list(self.unknown_logs_dir.glob("*.jpg"))
+            for f in log_files:
+                f.unlink()
+            print(f"[FaceRecognizer] Cleared {len(log_files)} unknown log files.")
+
+        if clear_cache:
+            self._unknown_cache.clear()
+            print("[FaceRecognizer] Unknown face cache cleared.")
 
     @property
     def known_people(self) -> list:

@@ -1,6 +1,7 @@
 # Python
 __pycache__/
 *.pyc
+*.pyo
 venv/
 .venv/
 
@@ -10,10 +11,10 @@ embeddings/
 logs/
 unknown_logs/
 
-# Models (usually too large / regenerable)
+# Models (too large for git — use Git LFS or share separately)
 models/
 
-# Sensitive - face data
+# Sensitive — face data
 known_faces/
 
 # Env/secrets
@@ -21,3 +22,16 @@ known_faces/
 
 # OS junk
 .DS_Store
+.DS_Store?
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Alert log (generated at runtime)
+logs/
+*.jsonl
+*.log
